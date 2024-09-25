@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:  rgb(94 164 162 / 45%);
+	font-family: Lucida Console, Monaco, monospace;
+}
+
+/* header */
+.header {
+	position: fixed;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+	height: 7vh;
+	background-color: rgb(28 45 45 / 87%);
+	right: 0;
+	top: 0;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	padding: 25px;
+  }
+
+
+/* 
+section */
+section {
+  height: 86vh;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.img-container {}
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+	position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 7vh;
+	background-color: rgb(28 45 45 / 87%);
+    z-index: 30;
+    overflow: hidden;
+    color: #fafafa;
+    box-shadow: 0px -5px 8px 5px rgba(0, 0, 0, 0.37);
+}
+/* details */
+.year-github{
+    padding-left: 20px;
+}
+/* github-link */
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.github-link {
+    color: #fafafa;
+}
+.github-link:hover {
+    color: #a3cddb;
+}
+/* logo */
+.logo-rsschool {
+    padding-right: 20px;
+}
+.logo-rss-svg {
+    width: 5vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
