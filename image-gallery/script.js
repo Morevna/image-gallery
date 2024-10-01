@@ -1,36 +1,32 @@
-const music = document.querySelector('#audio');
-const coverBody = document.querySelector('.bg');
+const access_key = 'BuakfDjOFEi2uOmwEcYQh40aUL_KdOOBp30epiRAqt4';
 
+const random_photo_url = `https://api.unsplash.com/photos/random?client_id=${access_key}&count=30`
 
-const audio = new Audio();
-const playBtn = document.querySelector(".play-btn");
-const nextBtn = document.querySelector(".forward-btn");
-const prevBtn = document.querySelector(".backward-btn");
+const gallery = document.querySelector('.img-container');
 
-const trackTitle = document.querySelector(".music-name");
-const trackArtist = document.querySelector(".singer-name");
+let allImages;
 
-const trackImg = document.querySelector(".upper_cover");
+const getImages = () => {
+    fetch(random_photo_url)
+    .then(res => res.json())
+    .then(data => {
+        allImages = data;
+        makeImages(allImages)
+    });
+}
 
-const progressFilled = document.querySelector(".seek-bar");
-const currentTimeFielf = document.querySelector(".current-time");
-const endTimeFielf = document.querySelector(".song-duration");
+//создаёт элементы (фото)
+const makeImages = (data) => {
+    data.forEach((item, index) => {
+        console.log(item);
 
-//Глобальные переменные
-let isPlay = false;
-let currentIndex = 0; // индекс звучащей песни;
-let currentTime = 0;
-let tick;
-let tickProgress;
+        let img = document.createElement('img');
+        img.src = item.urls.regular;
+        img.className = 'gallery-img';
 
+//дочерний метод добавления
+        gallery.appendChild(img);
+    })
+}
 
-
-//Подключение функций
-startScreen();
-playBtn.addEventListener("click", clickPlayBtn);
-nextBtn.addEventListener("click", playNextAudio);
-prevBtn.addEventListener("click", playPrevAudio);
-progressFilled.addEventListener("mousedown", stopTick);
-progressFilled.addEventListener("touchstart", stopTick);
-progressFilled.addEventListener("mouseup", moveProgressValue);
-progressFilled.addEventListener("touchend", moveProgressValue);
+getImages();
