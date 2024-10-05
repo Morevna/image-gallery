@@ -1,6 +1,12 @@
+let searchParam = location.search.split('=').pop();
+
 const access_key = 'BuakfDjOFEi2uOmwEcYQh40aUL_KdOOBp30epiRAqt4';
 
-const random_photo_url = `https://api.unsplash.com/photos/random?client_id=${access_key}&count=30`
+
+//рандомные фото
+const random_photo_url = `https://api.unsplash.com/photos/random?client_id=${access_key}&count=30`;
+//фото по запросу
+const search_photo_url = `https://api.unsplash.com/search/photos?client_id=${access_key}&query=${searchParam}&per_page=30`;
 
 const gallery = document.querySelector('.img-container');
 
